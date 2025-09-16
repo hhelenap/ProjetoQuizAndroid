@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView txtPergunta;
+    TextView txvPergunta;
 
     RadioGroup rdgPrincipal;
 
@@ -44,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        txvPergunta = findViewById(R.id.txv_pergunta);
+        rdgPrincipal = findViewById(R.id.rdg_principal);
+        btnResponder = findViewById(R.id.btn_responder);
+
+        carregarPerguntas();
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
